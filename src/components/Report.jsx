@@ -518,7 +518,7 @@ export default function Report({ removeNulls = true }) {
     <Box sx={{ p: { xs: 1, sm: 2 } }}>
       {/* Toolbar */}
       {!loading && (
-        <Stack direction="row" alignItems="flex-end" justifyContent="space-between" mb={1} flexWrap="wrap" gap={1}>
+        <Stack direction="row" alignItems="center" justifyContent="flex-start" mb={1} flexWrap="wrap" gap={2}>
           <Typography variant="body2" color="text.secondary">
             {filteredRows.length} of {data.length} records
           </Typography>
