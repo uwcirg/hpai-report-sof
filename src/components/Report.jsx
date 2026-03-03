@@ -23,7 +23,6 @@ import {
   Select,
   MenuItem,
   Button,
-  Chip,
   Typography,
   CircularProgress,
   Alert,
@@ -149,7 +148,6 @@ const COLUMNS = [
     size: 220,
     enableColumnFilter: false,
     cell: ({ getValue }) => renderNotes(getValue()),
-    meta: { csvOnly: true },
   },
   {
     accessorKey: "contact_with_sick_dead_animals",
@@ -165,7 +163,6 @@ const COLUMNS = [
     header: "Animals Notes",
     size: 220,
     enableColumnFilter: false,
-    meta: { csvOnly: true },
     cell: ({ getValue }) => renderNotes(getValue()),
   },
   {
@@ -182,7 +179,6 @@ const COLUMNS = [
     header: "Raw Foods Notes",
     size: 200,
     enableColumnFilter: false,
-    meta: { csvOnly: true },
     cell: ({ getValue }) => renderNotes(getValue()),
   },
   {
@@ -203,8 +199,7 @@ const COLUMNS = [
 
 function renderYesNo(value) {
   if (!value) return "—";
-  const color = value === "Yes" ? "error" : value === "No" ? "success" : "default";
-  return <Chip label={value} size="small" color={color} variant="outlined" />;
+  return <Typography variant="body2">{value}</Typography>;
 }
 
 function renderNotes(value) {
