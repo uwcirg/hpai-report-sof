@@ -7,6 +7,7 @@
     "@mui/icons-material": "^5.8.4",
     "@mui/lab": "^5.0.0-alpha.88",
     "@mui/material": "^5.8.6",
+    "@tanstack/react-table": "^8.21.3",
     "dayjs": "^1.11.19",
     "fhirclient": "^2.4.0",
     "react": "^18.2.0",
