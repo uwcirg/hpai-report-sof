@@ -97,6 +97,18 @@ sortNullableDate.autoRemove = (val) => !val;
 
 const COLUMNS = [
   {
+    accessorKey: "authored",
+    header: "Report Date",
+    size: 180,
+    enableColumnFilter: true,
+    cell: ({ getValue }) => {
+      const val = getValue();
+      if (!val) return "—";
+      return new Date(val).toLocaleString();
+    },
+    sortingFn: "sortNullableDate",
+  },
+  {
     accessorKey: "name_given",
     header: "First Name",
     size: 120,
@@ -120,18 +132,6 @@ const COLUMNS = [
     size: 120,
     enableColumnFilter: false,
     meta: { csvOnly: true },
-  },
-  {
-    accessorKey: "authored",
-    header: "Authored",
-    size: 180,
-    enableColumnFilter: true,
-    cell: ({ getValue }) => {
-      const val = getValue();
-      if (!val) return "—";
-      return new Date(val).toLocaleString();
-    },
-    sortingFn: "sortNullableDate",
   },
   {
     accessorKey: "contact_with_infected_person",
@@ -210,9 +210,9 @@ function renderNotes(value) {
         variant="body2"
         sx={{
           maxWidth: 200,
-          overflow: "hidden",
-          textOverflow: "ellipsis",
-          whiteSpace: "nowrap",
+          // overflow: "hidden",
+          // textOverflow: "ellipsis",
+          whiteSpace: "wrap",
           cursor: "help",
         }}
       >
